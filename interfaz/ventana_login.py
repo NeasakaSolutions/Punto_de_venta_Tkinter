@@ -6,6 +6,7 @@ from tkinter import Button
 from tkinter import LabelFrame
 from tkinter import Entry
 from tkinter import ttk
+import ttkbootstrap as tb
 
 def ventana_login(parent):
     """Función para crear la ventana de inicio de sesión."""
@@ -18,21 +19,21 @@ def ventana_login(parent):
     parent.frame_login.grid(row = 0, column = 0, sticky = "NSEW")
 
     # Creación de un marco para el inicio de sesión
-    lblframe_login = LabelFrame(master = parent.frame_login, text = "Acceso")
+    lblframe_login = tb.LabelFrame(master = parent.frame_login, text = "Acceso")
     lblframe_login.pack(padx = 10, pady = 35)
 
     # Creación de etiquetas y campos de entrada
-    lbl_titulo = Label(master = lblframe_login, text = "Iniciar sesion")
+    lbl_titulo = tb.Label(master = lblframe_login, text = "Iniciar sesion")
     lbl_titulo.pack(padx = 10, pady = 35)
 
     # Etiquetas para usuario y clave
-    ent_usuario = ttk.Entry(master = lblframe_login, width = 40, justify = "center")
+    ent_usuario = tb.Entry(master = lblframe_login, width = 40, justify = "center")
     ent_usuario.pack(padx = 10, pady = 5)
-    ent_clave = ttk.Entry(master = lblframe_login, width = 40, justify = "center")
+    ent_clave = tb.Entry(master = lblframe_login, width = 40, justify = "center")
     ent_clave.pack(padx = 10, pady = 5)
     # Ocultando la clave
     ent_clave.config(show = "*")
-    btn_acceso = ttk.Button(master = lblframe_login, width = 38, text = "Login")
+    btn_acceso = tb.Button(master = lblframe_login, width = 38, text = "Login")
     btn_acceso.pack(padx = 10, pady = 5)
 
 
