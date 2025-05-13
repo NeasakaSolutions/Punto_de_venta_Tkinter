@@ -1,1 +1,17 @@
-.env
+# Ignorar archivos y carpetas de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Carpetas comunes de entorno virtual
+env/
+venv/
+
+# Archivos de configuración de VS Code
+.vscode/
+
+# Archivos del sistema (opcional)
+.DS_Store
+Thumbs.db
+
+.env 
