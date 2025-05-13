@@ -1,5 +1,6 @@
 # Importaciones:
 from tkinter import Tk
+from interfaz.ventana_login import ventana_login
 
 class Ventana(Tk):
     """Clase que representa la ventana principal de la aplicación."""
@@ -11,3 +12,6 @@ class Ventana(Tk):
         # Configuración de la ventana
         self.title("Punto de Venta")
         self.state('zoomed')
+
+        # Llamando a la ventana login:
+        ventana_login(self)
