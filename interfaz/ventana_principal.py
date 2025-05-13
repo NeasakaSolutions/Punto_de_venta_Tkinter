@@ -1,8 +1,9 @@
 # Importaciones:
+import ttkbootstrap as tb
 from tkinter import Tk
 from interfaz.ventana_login import ventana_login
 
-class Ventana(Tk):
+class Ventana(tb.Window):
     """Clase que representa la ventana principal de la aplicación."""
 
     def __init__(self):
