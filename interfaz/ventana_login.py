@@ -23,7 +23,7 @@ def ventana_login(parent):
     lblframe_login.pack(padx = 10, pady = 35)
 
     # Creación de etiquetas y campos de entrada
-    lbl_titulo = tb.Label(master = lblframe_login, text = "Iniciar sesion")
+    lbl_titulo = tb.Label(master = lblframe_login, text = "Iniciar sesion", font = ("Calibri", 18))
     lbl_titulo.pack(padx = 10, pady = 35)
 
     # Etiquetas para usuario y clave
@@ -33,7 +33,7 @@ def ventana_login(parent):
     ent_clave.pack(padx = 10, pady = 5)
     # Ocultando la clave
     ent_clave.config(show = "*")
-    btn_acceso = tb.Button(master = lblframe_login, width = 38, text = "Login")
+    btn_acceso = tb.Button(master = lblframe_login, width = 38, text = "Login", bootstyle = "success")
     btn_acceso.pack(padx = 10, pady = 5)
 
 
