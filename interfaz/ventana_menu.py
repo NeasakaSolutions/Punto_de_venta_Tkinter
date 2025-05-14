@@ -2,6 +2,7 @@
 from tkinter import Frame
 from tkinter import Button
 from tkinter import Label
+from interfaz.ventana_lista_usuarios import ventana_lista_usuarios
 
 def ventana_menu(parent):
     """ Configuración de la ventana principal del menú """
@@ -16,7 +17,9 @@ def ventana_menu(parent):
     lbl_prueba.grid(row = 0, column = 0, pady = 10, padx = 10)
 
     # Configuración de los botones del menú
-    btn_usuarios = Button(master = parent.frame_left, text = "Usuarios", width = 15, height = 2)
+    btn_usuarios = Button(master = parent.frame_left, text = "Usuarios", width = 15, height = 2,
+                          # Se pasan los argumentos a la función ventana_lista_usuarios
+                          command = lambda: ventana_lista_usuarios(parent))
     btn_usuarios.grid(row = 0, column = 0, pady = 10, padx = 10)
 
     
