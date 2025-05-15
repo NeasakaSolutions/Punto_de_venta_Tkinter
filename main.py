@@ -5,8 +5,13 @@ from interfaz.ventana_principal import Ventana
 def main():
     """Función principal para ejecutar la aplicación."""
     app = Ventana()
-    # Diseño del proyecto
-    tb.Style('darkly')
+    
+    ###Posibles disenios:
+    # cosmo (Blanco)
+    # darkly (Obscuro)
+    # superhero (Claro)
+    # solar (Claro)###
+    tb.Style('superhero')
     app.mainloop()
 
 # Ejecutar la aplicación

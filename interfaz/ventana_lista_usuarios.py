@@ -50,7 +50,8 @@ def ventana_lista_usuarios(parent):
 
     # Crear el Treeview para mostrar la lista de usuarios
     parent.tree_lista_usuarios = ttk.Treeview(master = lblframe_tree_lista_usuarios, height = 17, 
-                                              columns = columnas ,show = "headings")
+                                              columns = columnas ,show = "headings", 
+                                              bootstyle = "dark")
     
     parent.tree_lista_usuarios.grid(row = 0, column = 0, padx = 10, pady = 10)
 
@@ -67,7 +68,7 @@ def ventana_lista_usuarios(parent):
     parent.tree_lista_usuarios.column('rol', width = 150)
 
     # Crear el scrollbar
-    tree_scroll = ttk.Scrollbar(master = lblframe_tree_lista_usuarios)
+    tree_scroll = tb.Scrollbar(master = lblframe_tree_lista_usuarios, bootstyle = "success-round")
     tree_scroll.grid(row = 0, column = 1, padx = 10, pady = 10)
 
     # Configurar el scrollbar
