@@ -10,7 +10,6 @@ from logica.mostrar_usuario import mostrar_usuario
 def ventana_lista_usuarios(parent):
     """Crea una ventana para mostrar la lista de usuarios."""
 
-    mostrar_usuario()
     # Crear un marco para la ventana
     parent.frame_lista_usuarios = Frame(master = parent)
     parent.frame_lista_usuarios.grid(row = 0, column = 1, columnspan = 2, sticky = "NSEW")
@@ -73,6 +72,8 @@ def ventana_lista_usuarios(parent):
 
     # Configurar el scrollbar
     tree_scroll.config(command = parent.tree_lista_usuarios.yview)
+
+    mostrar_usuario(parent)
 
 
 
