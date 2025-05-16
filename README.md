@@ -24,5 +24,5 @@ Proyecto de punto de venta con interfaz gráfica en Python y base de datos SQLit
 2. Clonar el repositorio:
 
    ```bash
-   git clone https://https://github.com/NeasakaSolutions/Punto_de_venta_Tkinter
+   git clone https://github.com/NeasakaSolutions/Punto_de_venta_Tkinter
    cd Punto_de_venta
