@@ -6,6 +6,7 @@ from tkinter import LabelFrame
 from tkinter import ttk
 from tkinter import W
 from logica.mostrar_usuario import mostrar_usuarios
+from interfaz.ventana_nuevo_usuario import ventana_nuevo_usuario
 
 def ventana_lista_usuarios(parent):
     """Crea una ventana para mostrar la lista de usuarios."""
@@ -20,7 +21,8 @@ def ventana_lista_usuarios(parent):
 
     # Botón para agregar un nuevo usuario
     btn_nuevo_lista_usuarios = tb.Button(master = lblframe_botones_lista_usuarios, text = "Nuevo", 
-                                         width = 15, bootstyle = "success")
+                                         width = 15, bootstyle = "success", 
+                                         command = lambda: ventana_nuevo_usuario(parent))
     btn_nuevo_lista_usuarios.grid(row = 0, column = 0, padx = 10, pady = 10)
 
     # Botón para modificar un usuario existente
