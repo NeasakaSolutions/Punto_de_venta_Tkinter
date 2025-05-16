@@ -5,7 +5,7 @@ from tkinter import Entry
 from tkinter import LabelFrame
 from tkinter import ttk
 from tkinter import W
-from logica.mostrar_usuario import mostrar_usuario
+from logica.mostrar_usuario import mostrar_usuarios
 
 def ventana_lista_usuarios(parent):
     """Crea una ventana para mostrar la lista de usuarios."""
@@ -78,7 +78,7 @@ def ventana_lista_usuarios(parent):
     # Configurar el scrollbar
     tree_scroll.config(command = parent.tree_lista_usuarios.yview)
 
-    mostrar_usuario(parent)
+    mostrar_usuarios(parent)
 
 
 
