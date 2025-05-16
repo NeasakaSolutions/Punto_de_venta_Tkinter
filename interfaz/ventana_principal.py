@@ -2,7 +2,6 @@
 import ttkbootstrap as tb
 from tkinter import Tk
 from interfaz.ventana_login import ventana_login
-from interfaz.ventana_menu import ventana_menu
 
 class Ventana(tb.Window):
     """Clase que representa la ventana principal de la aplicación."""
@@ -16,5 +15,5 @@ class Ventana(tb.Window):
         self.state('zoomed')
 
         # Llamando a la ventana login:
-        # ventana_login(self)
-        ventana_menu(self)
+        ventana_login(self)
+        # ventana_menu(self)
