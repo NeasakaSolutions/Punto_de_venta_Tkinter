@@ -1,7 +1,7 @@
 # Importaciones:
 from base_datos.conexion import conectar
 
-def mostrar_usuario(parent):
+def mostrar_usuarios(parent):
     """Funcio que muestra los usuarios atravez de consultas"""
 
     # conexion a la bd
