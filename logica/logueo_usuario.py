@@ -21,6 +21,7 @@ def logueo_usuarios(parent):
                         (con_usuario, con_clave))
         datos_logueo = mi_cursor.fetchall()
 
+        # Validar que los datos sean correctos
         if datos_logueo != '':
             for fila in datos_logueo:
                 nombre_usuario_logueado = fila[1]
