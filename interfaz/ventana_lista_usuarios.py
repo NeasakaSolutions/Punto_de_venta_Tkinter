@@ -12,6 +12,7 @@ def ventana_lista_usuarios(parent):
 
     # Importaciones perezosas
     from interfaz.ventana_nuevo_usuario import ventana_nuevo_usuario
+    from interfaz.ventana_modificar_usuario import ventana_modificar_usuario
 
     # Crear un marco para la ventana
     parent.frame_lista_usuarios = Frame(master = parent)
@@ -29,7 +30,8 @@ def ventana_lista_usuarios(parent):
 
     # Botón para modificar un usuario existente
     btn_modificar_lista_usuarios = tb.Button(master = lblframe_botones_lista_usuarios, text = "Modificar", 
-                                         width = 15, bootstyle = "warning")
+                                         width = 15, bootstyle = "warning",
+                                         command = lambda: ventana_modificar_usuario(parent))
     btn_modificar_lista_usuarios.grid(row = 0, column = 1, padx = 10, pady = 10)
 
     # Botón para eliminar un usuario
