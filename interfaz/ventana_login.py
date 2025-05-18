@@ -7,10 +7,12 @@ from tkinter import Button
 from tkinter import LabelFrame
 from tkinter import Entry
 from tkinter import ttk
-from logica.logueo_usuario import logueo_usuarios
 
 def ventana_login(parent):
     """Función para crear la ventana de inicio de sesión."""
+
+    # Importaciones perezosas
+    from logica.logueo_usuario import logueo_usuarios
 
     # Posicionamiento de la ventana
     parent.grid_columnconfigure(1, weight = 1)

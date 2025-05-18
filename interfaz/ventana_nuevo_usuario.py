@@ -6,6 +6,7 @@ from tkinter import Label
 def ventana_nuevo_usuario(parent):
     """Interfaz para la creacion del un nuevo usuario"""
 
+    # Importaciones perezosas
     from logica.guardar_usuario import guardar_usuario
 
     # Configuracion de la ventana

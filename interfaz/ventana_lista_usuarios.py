@@ -6,10 +6,12 @@ from tkinter import LabelFrame
 from tkinter import ttk
 from tkinter import W
 from logica.mostrar_usuario import mostrar_usuarios
-from interfaz.ventana_nuevo_usuario import ventana_nuevo_usuario
 
 def ventana_lista_usuarios(parent):
     """Crea una ventana para mostrar la lista de usuarios."""
+
+    # Importaciones perezosas
+    from interfaz.ventana_nuevo_usuario import ventana_nuevo_usuario
 
     # Crear un marco para la ventana
     parent.frame_lista_usuarios = Frame(master = parent)
