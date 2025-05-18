@@ -15,7 +15,7 @@ def mostrar_usuarios(parent):
         parent.tree_lista_usuarios.delete(elementos)
 
     # Crear la cosulta
-    mi_cursor.execute("SELECT * FROM Usuarios")
+    mi_cursor.execute("SELECT * FROM Usuarios ORDER BY Clave DESC")
     datos_usuarios = mi_cursor.fetchall()
 
     # insertar las filas en el treeview
