@@ -2,12 +2,12 @@
 import ttkbootstrap as tb
 from tkinter import Frame
 from tkinter import W
-from logica.logica_usuarios.buscar_usuario import buscar_usuario
 
 def ventana_lista_productos(parent):
     """Crea una ventana para mostrar la lista de productos."""
 
     # Importaciones perezosas
+    from interfaz.interfaz_productos.ventana_nuevo_producto import ventana_nuevo_producto
 
     # Crear un marco para la ventana
     parent.frame_lista_productos = Frame(master = parent)
@@ -19,7 +19,8 @@ def ventana_lista_productos(parent):
 
     # Botón para agregar un nuevo producto
     btn_nuevo_lista_productos = tb.Button(master = lblframe_botones_lista_productos, text = "Nuevo", 
-                                         width = 15, bootstyle = "success")
+                                         width = 15, bootstyle = "success", 
+                                         command = lambda: ventana_nuevo_producto(parent))
     btn_nuevo_lista_productos.grid(row = 0, column = 0, padx = 10, pady = 10)
 
     # Botón para modificar un producto existente
