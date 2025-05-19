@@ -1,12 +1,6 @@
 # Importaciones:
 import ttkbootstrap as tb
-from tkinter import Tk
 from tkinter import Frame
-from tkinter import Label
-from tkinter import Button
-from tkinter import LabelFrame
-from tkinter import Entry
-from tkinter import ttk
 
 def ventana_login(parent):
     """Función para crear la ventana de inicio de sesión."""

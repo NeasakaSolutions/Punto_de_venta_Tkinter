@@ -1,6 +1,5 @@
 # Importaciones:
 import ttkbootstrap as tb
-from tkinter import Tk
 from interfaz.ventana_login import ventana_login
 
 class Ventana(tb.Window):
