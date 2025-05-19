@@ -7,7 +7,7 @@ def ventana_menu(parent):
     """ Configuración de la ventana principal del menú """
 
     # Importaciones perezosas:
-    from interfaz_usuarios.ventana_lista_usuarios import ventana_lista_usuarios
+    from interfaz.interfaz_usuarios.ventana_lista_usuarios import ventana_lista_usuarios
 
     # Configuración de la ventana
     parent.frame_left = Frame(master = parent, width = 200)

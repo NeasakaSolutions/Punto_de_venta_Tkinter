@@ -2,7 +2,7 @@
 from base_datos.conexion import conectar
 
 def buscar_usuario(parent, event = None):
-    """Funcio que muestra los usuarios atravez de consultas"""
+    """Funcion que muestra los usuarios atravez de consultas"""
 
     # conexion a la bd
     mi_conexion = conectar()

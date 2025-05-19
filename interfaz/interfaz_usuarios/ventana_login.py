@@ -6,7 +6,7 @@ def ventana_login(parent):
     """Función para crear la ventana de inicio de sesión."""
 
     # Importaciones perezosas
-    from logica_usuarios.logueo_usuario import logueo_usuarios
+    from logica.logica_usuarios.logueo_usuario import logueo_usuarios
 
     # Posicionamiento de la ventana
     parent.grid_columnconfigure(1, weight = 1)

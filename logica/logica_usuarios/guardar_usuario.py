@@ -6,7 +6,7 @@ def guardar_usuario(parent):
     """Configuracion para el guardado de usuarios """
 
     # Importaciones perezosas
-    from logica_usuarios.buscar_usuario import buscar_usuario
+    from logica.logica_usuarios.buscar_usuario import buscar_usuario
 
     if (parent.ent_codigo_nuevo_usuario.get() == '' or parent.ent_nombre_nuevo_usuario.get() == ''
         or parent.ent_clave_nuevo_usuario.get() == '' or parent.cbo_rol_nuevo_usuario.get() == ''):

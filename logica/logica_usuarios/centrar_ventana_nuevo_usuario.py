@@ -1,7 +1,6 @@
 # Importaciones
 
-
-def centrar_ventana_modificar_usuario(parent, ancho, altura):
+def centrar_ventana_nuevo_usuario(parent, ancho, altura):
     """Configuracion de la ventana"""
 
     # Atributos

@@ -1,6 +1,6 @@
 # Importaciones:
 import ttkbootstrap as tb
-from interfaz_usuarios.ventana_login import ventana_login
+from interfaz.interfaz_usuarios.ventana_login import ventana_login
 
 class Ventana(tb.Window):
     """Clase que representa la ventana principal de la aplicación."""

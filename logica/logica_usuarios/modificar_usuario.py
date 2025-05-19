@@ -6,7 +6,6 @@ from base_datos.conexion import conectar
 def modificar_usuario(parent):
     """Configuracion para la modificacion de usuarios """
 
-    # Importaciones perezosas
 
     if (parent.ent_codigo_modificar_usuario.get() == '' or parent.ent_nombre_modificar_usuario.get() == ''
         or parent.ent_clave_modificar_usuario.get() == '' or parent.cbo_rol_modificar_usuario.get() == ''):
