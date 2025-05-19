@@ -6,7 +6,7 @@ def eliminar_usuario(parent):
     """Funcion que contiene la configuracion para la eliminacion de usuarios"""
 
     # Importaciones perezosas
-    from logica.mostrar_usuario import mostrar_usuarios
+    from logica.buscar_usuario import buscar_usuario
 
 
     usuario_seleccionado_eliminar = parent.tree_lista_usuarios.focus()
@@ -29,7 +29,7 @@ def eliminar_usuario(parent):
             # Aplicar cambios
             mi_conexion.commit()
             messagebox.showinfo('Eliminando usuario', 'Registro eliminado correctamente')
-            mostrar_usuarios(parent)
+            buscar_usuario(parent)
             # Cerrar conexion
             mi_conexion.close()
 
