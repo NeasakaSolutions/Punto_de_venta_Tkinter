@@ -8,6 +8,7 @@ def ventana_modificar_usuario(parent):
 
     # Importaciones perezosas
     from logica.llenar_entrys import llenar_entrys_modificar_usuario
+    from logica.modificar_usuario import modificar_usuario
 
     parent.usuario_seleccionado = parent.tree_lista_usuarios.focus()
     parent.valor_usuario_seleccionado = parent.tree_lista_usuarios.item(parent.usuario_seleccionado, 'values')
@@ -51,7 +52,7 @@ def ventana_modificar_usuario(parent):
 
         # COnfiguracion del boton para modificar usuario
         btn_modificar_usuario = tb.Button(master = lblframe_modificar_usuario, text = 'Modificar', width = 38,
-                                        bootstyle = 'warning')
+                                        bootstyle = 'warning', command = lambda: modificar_usuario(parent))
         btn_modificar_usuario.grid(row = 4, column = 1, padx = 10, pady = 10)
 
         llenar_entrys_modificar_usuario(parent)
