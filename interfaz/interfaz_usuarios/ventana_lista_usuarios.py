@@ -1,7 +1,6 @@
 # Importaciones:
 import ttkbootstrap as tb
 from tkinter import Frame
-from tkinter import ttk
 from tkinter import W
 from logica.logica_usuarios.buscar_usuario import buscar_usuario
 
@@ -56,7 +55,7 @@ def ventana_lista_usuarios(parent):
     columnas = ("codigo", "nombre", "clave", "rol")
 
     # Crear el Treeview para mostrar la lista de usuarios
-    parent.tree_lista_usuarios = ttk.Treeview(master = lblframe_tree_lista_usuarios, height = 17, 
+    parent.tree_lista_usuarios = tb.Treeview(master = lblframe_tree_lista_usuarios, height = 17, 
                                               columns = columnas ,show = "headings", 
                                               bootstyle = "success")
     
