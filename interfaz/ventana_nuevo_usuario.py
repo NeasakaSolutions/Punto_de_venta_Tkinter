@@ -8,11 +8,12 @@ def ventana_nuevo_usuario(parent):
 
     # Importaciones perezosas
     from logica.guardar_usuario import guardar_usuario
+    from logica.centrar_ventana_nuevo_usuario import centrar_ventana_nuevo_usuario
 
     # Configuracion de la ventana
     parent.frame_nuevo_usuario = Toplevel(master = parent)
     parent.frame_nuevo_usuario.title('Nuevo Usuario')
-    parent.frame_nuevo_usuario.geometry('400x350')
+    centrar_ventana_nuevo_usuario(parent.frame_nuevo_usuario, 400, 350)
     parent.frame_nuevo_usuario.grab_set()
 
     lblframe_nuevo_usuario = tb.LabelFrame(master = parent.frame_nuevo_usuario, text = 'Nuevo Usuario')

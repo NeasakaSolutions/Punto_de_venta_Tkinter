@@ -9,6 +9,7 @@ def ventana_modificar_usuario(parent):
     # Importaciones perezosas
     from logica.llenar_entrys import llenar_entrys_modificar_usuario
     from logica.modificar_usuario import modificar_usuario
+    from logica.centrar_ventana_modificar_usuario import centrar_ventana_modificar_usuario
 
     parent.usuario_seleccionado = parent.tree_lista_usuarios.focus()
     parent.valor_usuario_seleccionado = parent.tree_lista_usuarios.item(parent.usuario_seleccionado, 'values')
@@ -16,8 +17,8 @@ def ventana_modificar_usuario(parent):
     if parent.valor_usuario_seleccionado != '':
         # Configuracion de la ventana
         parent.frame_modificar_usuario = Toplevel(master = parent)
-        parent.frame_modificar_usuario.title('Nuevo Usuario')
-        parent.frame_modificar_usuario.geometry('400x350')
+        parent.frame_modificar_usuario.title('Modificar Usuario')
+        centrar_ventana_modificar_usuario(parent.frame_modificar_usuario, 400, 350)
         parent.frame_modificar_usuario.grab_set()
 
         lblframe_modificar_usuario = tb.LabelFrame(master = parent.frame_modificar_usuario,
