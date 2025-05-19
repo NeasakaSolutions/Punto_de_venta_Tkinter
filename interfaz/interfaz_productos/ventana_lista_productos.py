@@ -8,6 +8,7 @@ def ventana_lista_productos(parent):
 
     # Importaciones perezosas
     from interfaz.interfaz_productos.ventana_nuevo_producto import ventana_nuevo_producto
+    from logica.logica_productos.buscar_producto import buscar_producto
 
     # Crear un marco para la ventana
     parent.frame_lista_productos = Frame(master = parent)
@@ -84,7 +85,7 @@ def ventana_lista_productos(parent):
     # Configurar el scrollbar
     tree_scroll.config(command = parent.tree_lista_productos.yview)
 
-    # buscar_producto(parent, None)
+    buscar_producto(parent, None)
     parent.ent_buscar_lista_productos.focus()
 
 
