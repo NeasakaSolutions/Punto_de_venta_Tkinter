@@ -58,5 +58,13 @@ def ventana_modificar_usuario(parent):
 
         llenar_entrys_modificar_usuario(parent)
 
+        # Experiencia de usuario# Asociar teclas Enter a los campos
+        parent.ent_codigo_modificar_usuario.bind("<Return>", lambda e: parent.ent_nombre_modificar_usuario.focus())
+        parent.ent_nombre_modificar_usuario.bind("<Return>", lambda e: parent.ent_clave_modificar_usuario.focus())
+        parent.ent_clave_modificar_usuario.bind("<Return>", lambda e: parent.cbo_rol_modificar_usuario.focus())
+        parent.cbo_rol_modificar_usuario.bind("<Return>", lambda e: modificar_usuario(parent))
+        parent.ent_nombre_modificar_usuario.focus()
+
+
 
 
