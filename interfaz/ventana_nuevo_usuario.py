@@ -9,6 +9,7 @@ def ventana_nuevo_usuario(parent):
     # Importaciones perezosas
     from logica.guardar_usuario import guardar_usuario
     from logica.centrar_ventana_nuevo_usuario import centrar_ventana_nuevo_usuario
+    from logica.correlativos_usuarios import correlativo_usuarios
 
     # Configuracion de la ventana
     parent.frame_nuevo_usuario = Toplevel(master = parent)
@@ -52,6 +53,14 @@ def ventana_nuevo_usuario(parent):
                                     bootstyle = 'success', command = lambda: guardar_usuario(parent))
     btn_guardar_usuario.grid(row = 4, column = 1, padx = 10, pady = 10)
 
+    correlativo_usuarios(parent)
+
+    # Mejorar experiencia del usuario
+    parent.ent_nombre_nuevo_usuario.focus()
+    # Vincular Enter para avanzar entre campos
+    parent.ent_codigo_nuevo_usuario.bind("<Return>", lambda e: parent.ent_nombre_nuevo_usuario.focus())
+    parent.ent_nombre_nuevo_usuario.bind("<Return>", lambda e: parent.ent_clave_nuevo_usuario.focus())
+    parent.ent_clave_nuevo_usuario.bind("<Return>", lambda e: guardar_usuario(parent))
 
 
 
