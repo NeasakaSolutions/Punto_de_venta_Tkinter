@@ -5,7 +5,7 @@ from tkinter import W
 from logica.logica_usuarios.buscar_usuario import buscar_usuario
 
 def ventana_lista_productos(parent):
-    """Crea una ventana para mostrar la lista de usuarios."""
+    """Crea una ventana para mostrar la lista de productos."""
 
     # Importaciones perezosas
 
