@@ -13,7 +13,7 @@ def correlativo_usuarios(parent):
         mi_cursor = mi_conexion.cursor()
 
         # Crear la cosulta
-        mi_cursor.execute("SELECT MAX(Codigo) FROM Usuarios ORDER BY Clave DESC")
+        mi_cursor.execute("SELECT MAX(Codigo) FROM Usuarios")
         correlativo_usuarios = mi_cursor.fetchone()
 
         for datos in correlativo_usuarios:

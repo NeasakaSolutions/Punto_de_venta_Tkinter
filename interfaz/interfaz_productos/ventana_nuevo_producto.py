@@ -8,6 +8,8 @@ def ventana_nuevo_producto(parent):
 
     # Importaciones perezosas
     from logica.logica_productos.centrar_ventana_nuevo_producto import centrar_ventana_nuevo_producto
+    from logica.logica_productos.guardar_producto import guardar_producto
+    from logica.logica_productos.correlativos_productos import correlativo_productos
 
     # Configuracion de la ventana
     parent.frame_nuevo_producto = Toplevel(master = parent)
@@ -62,9 +64,10 @@ def ventana_nuevo_producto(parent):
 
     # Configuracion del boton para guardar producto
     btn_guardar_producto = tb.Button(master = lblframe_nuevo_producto, text = 'Guardar', width = 38,
-                                    bootstyle = 'success')
+                                    bootstyle = 'success', command = lambda: guardar_producto(parent))
     btn_guardar_producto.grid(row = 7, column = 1, padx = 10, pady = 10)
 
+    correlativo_productos(parent)
     # Mejorar experiencia del usuario
     parent.ent_nombre_nuevo_producto.focus()
     # Vincular Enter para avanzar entre campos
@@ -73,6 +76,6 @@ def ventana_nuevo_producto(parent):
     parent.ent_costo_nuevo_producto.bind("<Return>", lambda e: parent.ent_precio_nuevo_producto.focus())
     parent.ent_precio_nuevo_producto.bind("<Return>", lambda e: parent.ent_stock_nuevo_producto.focus())
     parent.ent_stock_nuevo_producto.bind("<Return>", lambda e: parent.ent_minimo_nuevo_producto.focus())
-    # parent.ent_minimo_nuevo_producto.bind("<Return>", lambda e: guardar_producto(parent))
+    parent.ent_minimo_nuevo_producto.bind("<Return>", lambda e: guardar_producto(parent))
 
     
