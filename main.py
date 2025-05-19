@@ -1,6 +1,6 @@
 # Importaciones:
 import ttkbootstrap as tb
-from interfaz.ventana_principal import Ventana
+from interfaz_usuarios.ventana_principal import Ventana
 
 def main():
     """Función principal para ejecutar la aplicación."""

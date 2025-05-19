@@ -3,15 +3,15 @@ import ttkbootstrap as tb
 from tkinter import Frame
 from tkinter import ttk
 from tkinter import W
-from logica.buscar_usuario import buscar_usuario
+from logica_usuarios.buscar_usuario import buscar_usuario
 
 def ventana_lista_usuarios(parent):
     """Crea una ventana para mostrar la lista de usuarios."""
 
     # Importaciones perezosas
-    from interfaz.ventana_nuevo_usuario import ventana_nuevo_usuario
-    from interfaz.ventana_modificar_usuario import ventana_modificar_usuario
-    from logica.eliminar_usuario import eliminar_usuario
+    from interfaz_usuarios.ventana_nuevo_usuario import ventana_nuevo_usuario
+    from interfaz_usuarios.ventana_modificar_usuario import ventana_modificar_usuario
+    from logica_usuarios.eliminar_usuario import eliminar_usuario
 
     # Crear un marco para la ventana
     parent.frame_lista_usuarios = Frame(master = parent)

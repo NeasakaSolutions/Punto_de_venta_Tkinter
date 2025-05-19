@@ -6,7 +6,7 @@ def eliminar_usuario(parent):
     """Funcion que contiene la configuracion para la eliminacion de usuarios"""
 
     # Importaciones perezosas
-    from logica.buscar_usuario import buscar_usuario
+    from logica_usuarios.buscar_usuario import buscar_usuario
 
 
     usuario_seleccionado_eliminar = parent.tree_lista_usuarios.focus()

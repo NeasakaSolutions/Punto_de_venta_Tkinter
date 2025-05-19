@@ -7,9 +7,9 @@ def ventana_nuevo_usuario(parent):
     """Interfaz para la creacion del un nuevo usuario"""
 
     # Importaciones perezosas
-    from logica.guardar_usuario import guardar_usuario
-    from logica.centrar_ventana_nuevo_usuario import centrar_ventana_nuevo_usuario
-    from logica.correlativos_usuarios import correlativo_usuarios
+    from logica_usuarios.guardar_usuario import guardar_usuario
+    from logica_usuarios.centrar_ventana_nuevo_usuario import centrar_ventana_nuevo_usuario
+    from logica_usuarios.correlativos_usuarios import correlativo_usuarios
 
     # Configuracion de la ventana
     parent.frame_nuevo_usuario = Toplevel(master = parent)

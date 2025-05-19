@@ -1,5 +1,5 @@
 # Importaciones:
-from interfaz.ventana_menu import ventana_menu
+from interfaz_usuarios.ventana_menu import ventana_menu
 from base_datos.conexion import conectar
 from tkinter import messagebox
 

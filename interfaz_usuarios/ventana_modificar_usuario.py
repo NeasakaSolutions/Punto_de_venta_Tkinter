@@ -7,9 +7,9 @@ def ventana_modificar_usuario(parent):
     """Interfaz para la modificacion de un usuario"""
 
     # Importaciones perezosas
-    from logica.llenar_entrys import llenar_entrys_modificar_usuario
-    from logica.modificar_usuario import modificar_usuario
-    from logica.centrar_ventana_modificar_usuario import centrar_ventana_modificar_usuario
+    from logica_usuarios.llenar_entrys import llenar_entrys_modificar_usuario
+    from logica_usuarios.modificar_usuario import modificar_usuario
+    from logica_usuarios.centrar_ventana_modificar_usuario import centrar_ventana_modificar_usuario
 
     parent.usuario_seleccionado = parent.tree_lista_usuarios.focus()
     parent.valor_usuario_seleccionado = parent.tree_lista_usuarios.item(parent.usuario_seleccionado, 'values')
