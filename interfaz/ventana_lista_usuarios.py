@@ -1,8 +1,6 @@
 # Importaciones:
 import ttkbootstrap as tb
 from tkinter import Frame
-from tkinter import Entry
-from tkinter import LabelFrame
 from tkinter import ttk
 from tkinter import W
 from logica.buscar_usuario import buscar_usuario
@@ -46,8 +44,9 @@ def ventana_lista_usuarios(parent):
     lblframe_busqueda_lista_usuarios.grid(row = 1, column = 0, padx= 5, pady = 5, sticky = "NSEW",)
 
     # Etiqueta para la barra de búsqueda
-    ent_buscar_lista_usuarios = tb.Entry(master = lblframe_busqueda_lista_usuarios, width = 98)
-    ent_buscar_lista_usuarios.grid(row = 0, column = 0, padx = 10, pady = 10)
+    parent.ent_buscar_lista_usuarios = tb.Entry(master = lblframe_busqueda_lista_usuarios, width = 98)
+    parent.ent_buscar_lista_usuarios.grid(row = 0, column = 0, padx = 10, pady = 10)
+    parent.ent_buscar_lista_usuarios.bind('<Key>', lambda event: buscar_usuario(parent, event))
 
     # Botón para buscar un usuario
     lblframe_tree_lista_usuarios = tb.LabelFrame(master = parent.frame_lista_usuarios)
@@ -86,7 +85,8 @@ def ventana_lista_usuarios(parent):
     # Configurar el scrollbar
     tree_scroll.config(command = parent.tree_lista_usuarios.yview)
 
-    buscar_usuario(parent)
+    buscar_usuario(parent, None)
+    parent.ent_buscar_lista_usuarios.focus()
 
 
 

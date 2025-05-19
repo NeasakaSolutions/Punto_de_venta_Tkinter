@@ -1,10 +1,12 @@
 # Importaciones
 from tkinter import messagebox
 from base_datos.conexion import conectar
-from interfaz.ventana_lista_usuarios import ventana_lista_usuarios
 
 def guardar_usuario(parent):
     """Configuracion para el guardado de usuarios """
+
+    # Importaciones perezosas
+    from logica.buscar_usuario import buscar_usuario
 
     if (parent.ent_codigo_nuevo_usuario.get() == '' or parent.ent_nombre_nuevo_usuario.get() == ''
         or parent.ent_clave_nuevo_usuario.get() == '' or parent.cbo_rol_nuevo_usuario.get() == ''):
@@ -29,7 +31,7 @@ def guardar_usuario(parent):
         # Avisar que se guardo
         messagebox.showinfo('Guardando usuario', 'Registro guardado correctamente.')
         parent.frame_nuevo_usuario.destroy()
-        ventana_lista_usuarios(parent)
+        buscar_usuario(parent, event = None)
 
         # Cerrar conexion
         mi_conexion.close()

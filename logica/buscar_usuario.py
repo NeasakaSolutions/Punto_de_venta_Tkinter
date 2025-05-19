@@ -1,7 +1,7 @@
 # Importaciones:
 from base_datos.conexion import conectar
 
-def buscar_usuario(parent):
+def buscar_usuario(parent, event = None):
     """Funcio que muestra los usuarios atravez de consultas"""
 
     # conexion a la bd
@@ -15,7 +15,8 @@ def buscar_usuario(parent):
         parent.tree_lista_usuarios.delete(elementos)
 
     # Crear la cosulta
-    mi_cursor.execute("SELECT * FROM Usuarios ORDER BY Clave DESC")
+    mi_cursor.execute("SELECT * FROM Usuarios WHERE Nombre LIKE ? ORDER BY Clave DESC",
+                      (parent.ent_buscar_lista_usuarios.get() + '%',))
     datos_usuarios = mi_cursor.fetchall()
 
     # insertar las filas en el treeview
