@@ -8,6 +8,7 @@ def ventana_lista_productos(parent):
 
     # Importaciones perezosas
     from interfaz.interfaz_productos.ventana_nuevo_producto import ventana_nuevo_producto
+    from interfaz.interfaz_productos.ventana_modificar_producto import ventana_modificar_producto
     from logica.logica_productos.buscar_producto import buscar_producto
 
     # Crear un marco para la ventana
@@ -26,7 +27,8 @@ def ventana_lista_productos(parent):
 
     # Botón para modificar un producto existente
     btn_modificar_lista_productos = tb.Button(master = lblframe_botones_lista_productos, text = "Modificar", 
-                                         width = 15, bootstyle = "warning")
+                                         width = 15, bootstyle = "warning", 
+                                         command = lambda: ventana_modificar_producto(parent))
     btn_modificar_lista_productos.grid(row = 0, column = 1, padx = 10, pady = 10)
 
     # Botón para eliminar un producto
@@ -66,7 +68,7 @@ def ventana_lista_productos(parent):
     parent.tree_lista_productos.heading('stock', text = 'Stock', anchor = W)
     parent.tree_lista_productos.heading('minimo', text = 'Minimo', anchor = W)
 
-    #  Configurar las columnas a mostrar:
+    # Configurar las columnas a mostrar:
     parent.tree_lista_productos['displaycolumns'] = ('codigo', 'nombre', 'laboratorio', 'precio')
 
     # Tamanio de las columnas
