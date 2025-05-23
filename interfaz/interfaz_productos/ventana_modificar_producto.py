@@ -10,6 +10,7 @@ def ventana_modificar_producto(parent):
     from logica.logica_productos.centrar_ventana_modificar_producto import centrar_ventana_modificar_producto
     from logica.logica_productos.guardar_producto import guardar_producto
     from logica.logica_productos.llenar_entrys_modificar_productos import llenar_entrys_modificar_producto
+    from logica.logica_productos.modificar_producto import modificar_producto
 
     parent.producto_seleccionado = parent.tree_lista_productos.focus()
     parent.valor_producto_seleccionado = parent.tree_lista_productos.item(parent.producto_seleccionado, 'values')
@@ -68,7 +69,8 @@ def ventana_modificar_producto(parent):
 
         # Configuracion del boton para guardar producto
         btn_guardar_producto = tb.Button(master = lblframe_modificar_producto, text = 'Modificar', width = 38,
-                                        bootstyle = 'warning')
+                                        bootstyle = 'warning', 
+                                        command = lambda: modificar_producto(parent))
         btn_guardar_producto.grid(row = 7, column = 1, padx = 10, pady = 10)
 
         llenar_entrys_modificar_producto(parent)
