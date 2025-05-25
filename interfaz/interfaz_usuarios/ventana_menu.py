@@ -9,7 +9,7 @@ def ventana_menu(parent):
     # Importaciones perezosas:
     from interfaz.interfaz_usuarios.ventana_lista_usuarios import ventana_lista_usuarios
     from interfaz.interfaz_productos.ventana_lista_productos import ventana_lista_productos
-    from logica.general.borrar_frames import borrar_frames
+    from interfaz.interfaz_detalle_de_venta.ventana_detalle_venta import ventana_detalle_venta
 
     # Configuración de la ventana
     parent.frame_left = Frame(master = parent, width = 200)
@@ -33,7 +33,7 @@ def ventana_menu(parent):
     # Boton productos
     btn_ventas = Button(master = parent.frame_left, text = "Ventas", width = 15, height = 2,
                           # Se pasan los argumentos a la función ventana_lista_usuarios
-                          command = lambda: borrar_frames(parent))
+                          command = lambda: ventana_detalle_venta(parent))
     btn_ventas.grid(row = 2, column = 0, pady = 10, padx = 10)
 
     
