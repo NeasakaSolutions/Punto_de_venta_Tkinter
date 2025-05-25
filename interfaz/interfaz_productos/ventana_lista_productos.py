@@ -10,9 +10,11 @@ def ventana_lista_productos(parent):
     from interfaz.interfaz_productos.ventana_nuevo_producto import ventana_nuevo_producto
     from interfaz.interfaz_productos.ventana_modificar_producto import ventana_modificar_producto
     from logica.logica_productos.buscar_producto import buscar_producto
+    from logica.general.borrar_frames import borrar_frames
 
     # Crear un marco para la ventana
-    parent.frame_lista_productos = Frame(master = parent)
+    borrar_frames(parent)
+    parent.frame_lista_productos = Frame(master = parent.frame_center)
     parent.frame_lista_productos.grid(row = 0, column = 1, columnspan = 2, sticky = "NSEW")
 
     # Configurar el diseño de la ventana

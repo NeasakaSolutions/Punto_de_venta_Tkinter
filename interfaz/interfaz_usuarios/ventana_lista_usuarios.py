@@ -11,9 +11,11 @@ def ventana_lista_usuarios(parent):
     from interfaz.interfaz_usuarios.ventana_nuevo_usuario import ventana_nuevo_usuario
     from interfaz.interfaz_usuarios.ventana_modificar_usuario import ventana_modificar_usuario
     from logica.logica_usuarios.eliminar_usuario import eliminar_usuario
+    from logica.general.borrar_frames import borrar_frames
 
     # Crear un marco para la ventana
-    parent.frame_lista_usuarios = Frame(master = parent)
+    borrar_frames(parent)
+    parent.frame_lista_usuarios = Frame(master = parent.frame_center)
     parent.frame_lista_usuarios.grid(row = 0, column = 1, columnspan = 2, sticky = "NSEW")
 
     # Configurar el diseño de la ventana
