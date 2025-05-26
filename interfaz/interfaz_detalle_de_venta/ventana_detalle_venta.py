@@ -2,11 +2,15 @@
 import ttkbootstrap as tb
 from tkinter import Frame
 from tkinter import W
+from tkinter import NSEW
+from tkinter import CENTER
 
 def ventana_detalle_venta(parent):
     """Crea una ventana para mostrar detalles de las ventas."""
 
     # Importaciones perezosas
+    from interfaz.interfaz_detalle_de_venta.busqueda_descripcion import busqueda_descripcion
+    from interfaz.interfaz_detalle_de_venta.busqueda_codigo import busqueda_codigo
     from logica.general.borrar_frames import borrar_frames
 
     # Crear un marco para la ventana
@@ -20,46 +24,41 @@ def ventana_detalle_venta(parent):
 
     # Botón para detalles de venta
     btn_detalle = tb.Button(master = lblframe_botones_detalle_venta, text = "Detalle", 
-                                         width = 15, bootstyle = "success")
-    btn_detalle.grid(row = 0, column = 0, padx = 10, pady = 10)
+                                         width = 12, bootstyle = "info")
+    btn_detalle.grid(row = 0, column = 0, padx = 5, pady = 10)
 
     # Botón para cantidades de productos
     btn_cantidad = tb.Button(master = lblframe_botones_detalle_venta, text = "Cantidad", 
-                                         width = 15, bootstyle = "warning")
-    btn_cantidad.grid(row = 0, column = 1, padx = 10, pady = 10)
+                                         width = 12, bootstyle = "primary")
+    btn_cantidad.grid(row = 0, column = 1, padx = 5, pady = 10)
 
     # Botón para borrar
     btn_borrar = tb.Button(master = lblframe_botones_detalle_venta, text = "Borrar", 
-                                         width = 15, bootstyle = "danger")
-    btn_borrar.grid(row = 0, column = 2, padx = 10, pady = 10)
+                                         width = 12, bootstyle = "danger")
+    btn_borrar.grid(row = 0, column = 2, padx = 4, pady = 10)
 
     # Botón para dedscuento en los productos
-    btn_descuento = tb.Button(master = lblframe_botones_detalle_venta, text = "Cantidad", 
-                                         width = 15, bootstyle = "warning")
-    btn_descuento.grid(row = 0, column = 3, padx = 10, pady = 10)
+    btn_descuento = tb.Button(master = lblframe_botones_detalle_venta, text = "Descuento", 
+                                         width = 12, bootstyle = "warning")
+    btn_descuento.grid(row = 0, column = 3, padx = 4, pady = 10)
 
     # Botón para cobrar
     btn_cobrar = tb.Button(master = lblframe_botones_detalle_venta, text = "Cobrar", 
-                                         width = 15, bootstyle = "danger")
-    btn_cobrar.grid(row = 0, column = 4, padx = 10, pady = 10)
+                                         width = 12, bootstyle = "success")
+    btn_cobrar.grid(row = 0, column = 4, padx = 5, pady = 10)
 
-    # Botón para cobrar
+    # Botón para credito
     btn_credito = tb.Button(master = lblframe_botones_detalle_venta, text = "Credito", 
-                                         width = 15, bootstyle = "danger")
-    btn_credito.grid(row = 0, column = 5, padx = 10, pady = 10)
+                                         width = 12, bootstyle = "warning")
+    btn_credito.grid(row = 0, column = 5, padx = 5, pady = 10)
 
-    # Barra de búsqueda
-    lblframe_busqueda_detalle_venta = tb.LabelFrame(master = parent.frame_detalle_venta)
-    lblframe_busqueda_detalle_venta.grid(row = 1, column = 0, padx= 5, pady = 5, sticky = "NSEW",)
-
-    # Etiqueta para la barra de búsqueda
-    parent.ent_buscar_detalle_venta = tb.Entry(master = lblframe_busqueda_detalle_venta, width = 123)
-    parent.ent_buscar_detalle_venta.grid(row = 0, column = 0, padx = 10, pady = 10)
-    #parent.ent_buscar_lista_productos.bind('<Key>')
+    # Llamado a la barra de busqueda
+    busqueda_codigo(parent)
+    busqueda_descripcion(parent)
 
     # Botón para buscar detalles de venta
     lblframe_tree_lista_detalle_venta = tb.LabelFrame(master = parent.frame_detalle_venta)
-    lblframe_tree_lista_detalle_venta.grid(row = 2, column = 0, padx= 5, pady = 5, sticky = "NSEW",)
+    lblframe_tree_lista_detalle_venta.grid(row = 2, column = 0, sticky = "NSEW",)
 
     # Crear columnas:
     columnas = ("no", "codigo", "descripcion", "costo", "precio", "cantidad", "stock", "descuento", 
@@ -90,15 +89,15 @@ def ventana_detalle_venta(parent):
 
     # Tamanio de las columnas
     parent.tree_detalle_venta.column('no', width = 0)
-    parent.tree_detalle_venta.column('codigo', width = 50)
-    parent.tree_detalle_venta.column('descripcion', width = 300)
+    parent.tree_detalle_venta.column('codigo', width = 55)
+    parent.tree_detalle_venta.column('descripcion', width = 240)
     parent.tree_detalle_venta.column('costo', width = 100)
     parent.tree_detalle_venta.column('precio', width = 100)
-    parent.tree_detalle_venta.column('cantidad', width = 100)
-    parent.tree_detalle_venta.column('stock', width = 100)
+    parent.tree_detalle_venta.column('cantidad', width = 75)
+    parent.tree_detalle_venta.column('stock', width = 75)
     parent.tree_detalle_venta.column('descuento', width = 100)
     parent.tree_detalle_venta.column('subtotal', width = 100)
-    parent.tree_detalle_venta.column('existencia', width = 100)
+    parent.tree_detalle_venta.column('existencia', width = 80)
 
     # Crear el scrollbar
     tree_scroll = tb.Scrollbar(master = lblframe_tree_lista_detalle_venta, bootstyle = "success-round")
@@ -106,6 +105,13 @@ def ventana_detalle_venta(parent):
 
     # Configurar el scrollbar
     tree_scroll.config(command = parent.tree_detalle_venta.yview)
+
+    lblframe_total_detalle_venta = tb.LabelFrame(master = parent.frame_detalle_venta)
+    lblframe_total_detalle_venta.grid(row = 3, column = 0, sticky = NSEW)
+
+    parent.ent_total_detalle_venta = tb.Entry(master = lblframe_total_detalle_venta, width = 39,
+                                              font = ('calibri', 24), justify = CENTER)
+    parent.ent_total_detalle_venta.grid(row = 0, column = 0)
 
     #buscar_producto(parent, None)
     parent.ent_buscar_detalle_venta.focus()
