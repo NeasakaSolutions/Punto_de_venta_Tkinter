@@ -39,6 +39,7 @@ def logueo_usuarios(parent):
     except:
         messagebox.showwarning('Logueo', 'El usuario o la clave son incorrectas, por favor revisa.')
 
+
     
 
 

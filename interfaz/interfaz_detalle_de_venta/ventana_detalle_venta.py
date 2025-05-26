@@ -11,6 +11,7 @@ def ventana_detalle_venta(parent):
     # Importaciones perezosas
     from interfaz.interfaz_detalle_de_venta.busqueda_descripcion import busqueda_descripcion
     from interfaz.interfaz_detalle_de_venta.busqueda_codigo import busqueda_codigo
+    from interfaz.interfaz_detalle_de_venta.ventana_busqueda_detalle_venta import ventana_busqueda_detalle_venta
     from logica.general.borrar_frames import borrar_frames
 
     # Crear un marco para la ventana
@@ -115,6 +116,7 @@ def ventana_detalle_venta(parent):
 
     #buscar_producto(parent, None)
     parent.ent_buscar_detalle_venta.focus()
+    ventana_busqueda_detalle_venta(parent)
 
 
 
