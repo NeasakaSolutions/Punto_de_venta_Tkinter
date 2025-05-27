@@ -5,6 +5,11 @@ from tkinter import Radiobutton
 from base_datos.conexion import conectar
 
 def buscar_productos_detalle_venta(parent, event=None):
+    '''Función para buscar productos en la base de datos'''
+
+    # Importaciones perezosas
+    from logica.logica_ventas.pasar_codigo_detalle_venta import pasar_codigo_detalle_venta
+
     # conexión a la bd
     mi_conexion = conectar()
     mi_cursor = mi_conexion.cursor()
@@ -30,7 +35,9 @@ def buscar_productos_detalle_venta(parent, event=None):
     for row in datos_productos_detalle_venta:
         radbutton = Radiobutton(master=parent.frame_busqueda_detalle_venta,
                                text=row[1] + '\n' + row[2] + '\n' + str(row[4]),
-                               value=row[0], indicator=0, width=20, height=5)
+                               value=row[0], variable = codigo_busqueda_detalle_venta, indicator=0, 
+                               width=20, height=5, 
+                               command = lambda: pasar_codigo_detalle_venta(parent, codigo_busqueda_detalle_venta.get()))
         radbutton.grid(row=contador // filas, column=contador % filas, padx=5, pady=5, sticky="nsew")
         contador += 1
 
