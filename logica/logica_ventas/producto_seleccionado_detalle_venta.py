@@ -6,6 +6,7 @@ def producto_seleccionado_detalle_venta(parent):
 
     # Importaciones perezosas
     from logica.logica_ventas.agregar_producto_detalle_venta import agregar_producto_detalle_venta
+    from logica.logica_ventas.mostrar_productos_detalle_venta import mostrar_productos_detalle_venta
 
     # conexion a la bd
     mi_conexion = conectar()
@@ -16,7 +17,6 @@ def producto_seleccionado_detalle_venta(parent):
     mi_cursor.execute("SELECT * FROM Productos WHERE Codigo = " +
                     parent.ent_buscar_codigo_detalle_venta.get())
     datos_producto_seleccionado = mi_cursor.fetchall()
-    print(datos_producto_seleccionado)
 
     # condicion para verificar si se encontro el producto
     if datos_producto_seleccionado != None:
@@ -27,6 +27,7 @@ def producto_seleccionado_detalle_venta(parent):
             
     # Llamar a la funcion para agregar el producto al detalle de venta
     agregar_producto_detalle_venta(parent)
+    mostrar_productos_detalle_venta(parent)
 
     # Aplicar cambios
     mi_conexion.commit()
