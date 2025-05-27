@@ -14,6 +14,7 @@ def ventana_detalle_venta(parent):
     from interfaz.interfaz_detalle_de_venta.ventana_busqueda_detalle_venta import ventana_busqueda_detalle_venta
     from logica.general.borrar_frames import borrar_frames
     from logica.logica_ventas.buscar_producto_detalle_venta import buscar_productos_detalle_venta
+    from logica.logica_ventas.producto_seleccionado_detalle_venta import producto_seleccionado_detalle_venta
 
     # Crear un marco para la ventana
     borrar_frames(parent)
@@ -26,7 +27,8 @@ def ventana_detalle_venta(parent):
 
     # Botón para detalles de venta
     btn_detalle = tb.Button(master = lblframe_botones_detalle_venta, text = "Detalle", 
-                                         width = 12, bootstyle = "info")
+                                         width = 12, bootstyle = "info", 
+                                         command = lambda: producto_seleccionado_detalle_venta(parent))
     btn_detalle.grid(row = 0, column = 0, padx = 5, pady = 10)
 
     # Botón para cantidades de productos
